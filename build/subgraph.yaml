@@ -1,7 +1,7 @@
 specVersion: 0.0.2
 repository: https://github.com/graphprotocol/example-subgraph
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 features:
   - nonFatalErrors
 dataSources:
@@ -20,10 +20,10 @@ dataSources:
         - Gravatar
       abis:
         - name: Gravity
-          file: ./abis/Gravity.json
+          file: Gravity/abis/Gravity.json
       blockHandlers:
         - handler: handleBlock
-      file: ./src/mapping.ts
+      file: Gravity/Gravity.wasm
 templates:
   - kind: ethereum/contract
     name: Template
@@ -38,7 +38,7 @@ templates:
         - Gravatar
       abis:
         - name: Gravity
-          file: ./abis/Gravity.json
+          file: Template/abis/Gravity.json
       blockHandlers:
         - handler: handleBlockTemplate
-      file: ./src/mapping.ts
+      file: Gravity/Gravity.wasm
